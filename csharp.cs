@@ -1,25 +1,22 @@
-// Дописать нереализованные, но созданые функции, обработать возможные ошибки
-// Написать юнит тесты для всех функций для разных сценариев их использования
 public class Calculator
 {
     public int Add(int a, int b) => a + b;
+
     public int Subtract(int a, int b) => a - b;
 
-    // Добавить умножение
-    public int Multiply(int a, int b)
-    {
-        throw new NotImplementedException("Multiply not implemented yet!");
-    }
+    // Реализация умножения
+    public int Multiply(int a, int b) => a * b;
 
-    // Добавить деление
+    // Реализация деления
     public double Divide(int a, int b)
     {
-        throw new NotImplementedException("Divide not implemented yet!");
+        if (b == 0)
+        {
+            throw new DivideByZeroException("Нельзя на ноль делить");
+        }
+        return (double)a / b;
     }
 
-    // Добавить возведение в степень
-    public double Power(double a, double b)
-    {
-        throw new NotImplementedException("Power not implemented yet!");
-    }
+    // Реализация возведения в степень
+    public double Power(double a, double b) => Math.Pow(a, b);
 }
